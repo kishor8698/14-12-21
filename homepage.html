@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Modal -->
+<!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Update</button>-->
+
+<div class="modal fade" id="exampleModal12" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-white">
+            <div class="modal-body p-5">
+                <div class="row">
+                    <div class="col-10">                    
+                        <form method="POST" action="/add_post" id="post_form" enctype="multipart/form-data">
+                            <div class="mb-3 row">
+                                <label>Title</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="post_title" name="post_title">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label>Description</label>
+                                <div class="col-md-7">
+                                    <textarea class="form-control" id="post_desc" name="post_desc"></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-5 row">
+                                <label>Post Type/Category</label>
+                                <div class="col-sm-7 mb-3">
+                                    <select class="form-control" id='post_type' name="post_type">
+                                                    <option value="">------choose Type------</option> 
+                                                    <option value="IMAGE">IMAGE</option>
+                                                    <option value="VIDEO" >VIDEO</option>
+                                                    <option value="GIF">GIF</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <div class="col-md-7">
+                                    <div>
+                                        <input type="file" name='img_gif_video' class="form-control">
+                                        <span id='img_gif_video_msg'></span>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="mb-3 row">
+                                <div class="col-md-7 mb-3">
+                                    <button type="submit" class='btn btn-success btn-lg'>Submit Post</button>
+                                </div>
+                            </div>
+                         </form>       
+                    </div>                      
+                    <div class="col-2">
+                        <button type="button" class="btn btn-lg btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="icon-close icons"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- Button trigger modal -->
+
+  <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal12">Update</button> 
+
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+{% endblock content %}
+
+
+
+
